@@ -189,7 +189,7 @@ CombinedDFSorted.drop(columns =["Team 2 %"], inplace = True)
 CombinedDFSorted["Team 1 as %"] = CombinedDFSorted["Team 1 as %"].astype(float)
 CombinedDFSorted["Team 2 as %"] = CombinedDFSorted["Team 2 as %"].astype(float)
 
-print(CombinedDFSorted)
+CombinedDFSorted
 
 
 # In[ ]:
