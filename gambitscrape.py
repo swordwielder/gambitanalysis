@@ -18,7 +18,7 @@ import pytz
 # now = now.replace(tzinfo=pytz.utc)
 
 # x_dt.replace(tzinfo=Eastern)
-resp = requests.get('https://api.gambitprofit.com/gambit-plays/tokens/xxxx?_sort=createdAt:DESC&_limit=500')
+resp = requests.get('https://api.gambitprofit.com/gambit-plays/tokens/xxxx?_sort=createdAt:DESC&_limit=50')
 json_resp = json.loads(resp.content)
 multipliers = []
 
@@ -34,8 +34,8 @@ for play in json_resp:
     # today = utc.localize(d)
     # oneDay = utc.localize(past)
     # print(today)
-    # print(oneDay)
-    # print('d is ', type(d))
+    # print(oneDay)      ida-332_-____
+    # print('d is ', type(d))  
     # print('date time is ' , type(past) )
     # if (today < oneDay ) :
     print(play['Team1']['Name'], play['Team1']['Reward'],      play['Team2']['Name'], play['Team2']['Reward'])
