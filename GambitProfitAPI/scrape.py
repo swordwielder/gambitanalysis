@@ -16,7 +16,7 @@ allCurrentGames = []
 for game in gambitGames:
     if game['PlayDate']>my_date.isoformat()[:-3]+'Z':
         allCurrentGames.append(game['Team1']['Name']+' vs '+game['Team2']['Name'])
-        if game['Team1']['Reward']<1.3 or game['Team2']['Reward']<1.23:
+        if game['Team1']['Reward']<1.23 or game['Team2']['Reward']<1.23:
             print('This Game has odds less than 1.23')
         
         reward1=str(game['Team1']['Reward'])

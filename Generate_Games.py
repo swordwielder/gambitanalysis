@@ -5,6 +5,7 @@ import datetime
 from datetime import timedelta
 import dateutil.parser
 from bs4 import BeautifulSoup
+from datetime import datetime
 
 lolesports = requests.get("https://sports.intertops.eu/en/Bets/Esports/League-of-Legends-LPL-Spring/4221")
 NCAAB = requests.get("https://sports.intertops.eu/en/Bets/Basketball/NCAAB-Lines/1068")
@@ -14,8 +15,8 @@ NFL = requests.get("https://sports.intertops.eu/en/Bets/American-Football/NFL-Li
 Hockey = requests.get("https://sports.intertops.eu/en/Bets/Ice-Hockey/NHL-Lines/1064")
 allesports = requests.get("https://sports.intertops.eu/en/Bets/Esports/40")
 
-resp = requests.get('https://api.gambitprofit.com/gambit-plays/tokens/xxxx?_sort=createdAt:DESC&_limit=50')
-json_resp = json.loads(resp.content)
+# resp = requests.get('https://api.gambitprofit.com/gambit-plays/tokens/xxxx?_sort=createdAt:DESC&_limit=50')
+# json_resp = json.loads(resp.content)
 sourceFile = open('raw.txt', 'w')
 
 lolsrc = lolesports.content
@@ -36,7 +37,24 @@ soup7 = BeautifulSoup(allEsportssrc, 'lxml')
 
 sourceFile = open('raw.txt', 'w')
 
-# Fetch all the games available on Gambit
+
+
+
+# Fetch all the games available on Gambit that is higher than the current time
+# my_date = datetime.now()
+resp = requests.get('https://api.gambitprofit.com/gambit-plays?_sort=PlayDate:DESC')
+json_resp = json.loads(resp.content)
+# gambitGames = []
+
+# for play in json_resp:
+#     if play['PlayDate']>my_date.isoformat()[:-3]+'Z':
+#         d = dateutil.parser.parse(play['PlayDate'])
+#         gambitGames.append(play['Team1']['Name'])
+#         gambitGames.append(play['Team2']['Name'])
+
+
+
+
 gambitGames = []
 for play in json_resp:
 	d = dateutil.parser.parse(play['PlayDate'])

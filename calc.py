@@ -108,7 +108,6 @@ print('There are '+str(totalGames) +' total games listed as high risk with 1.0x 
 print('There are '+ str(highrisk)+ ' games listed as 1.01 & 1.02')
 print('There are '+ str(wins)+ ' wins')
 print('There are '+ str(totalGames-wins)+ ' losses')
-print('With 10% discount you are going to get the following:')
 print()
 print('Assuming you spent '+str(bets)+ ' tokens on each game')
 print('spending '+ str(tokens)+ ' tokens evenly on all '+str(totalGames) +' games')
