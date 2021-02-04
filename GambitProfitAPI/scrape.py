@@ -5,25 +5,24 @@ import datetime
 from datetime import timedelta
 import dateutil.parser
 import pytz
-
-# utc=pytz.UTC
-# past = datetime.datetime.today() - timedelta(days=1)
+from datetime import datetime
 
 
-# now = datetime.datetime.now()
-# # here, now.tzinfo is None, it's a naive datetime
-# now = pytz.utc.localize(now)
-
-# # the wrong way
-# now = now.replace(tzinfo=pytz.utc)
-
-# x_dt.replace(tzinfo=Eastern)
+my_date = datetime.now()
 resp = requests.get('https://api.gambitprofit.com/gambit-plays?_sort=PlayDate:DESC')
 gambitGames = json.loads(resp.content)
-multipliers = []
 
-
+allCurrentGames = []
 for game in gambitGames:
-    print(game)
+    if game['PlayDate']>my_date.isoformat()[:-3]+'Z':
+        allCurrentGames.append(game['Team1']['Name']+' vs '+game['Team2']['Name'])
+        if game['Team1']['Reward']<1.3 or game['Team2']['Reward']<1.23:
+            print('This Game has odds less than 1.23')
+        
+        reward1=str(game['Team1']['Reward'])
+        reward2=str(game['Team2']['Reward'])
+        print(game['Team1']['Name']+' '+reward1+' vs '+game['Team2']['Name']+" "+reward2)
+        print()
 
-
+#Do something here
+#print(allCurrentGames)

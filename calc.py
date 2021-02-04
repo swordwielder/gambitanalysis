@@ -8,7 +8,7 @@ sheet_idx = 1
 df = read_ods(path, sheet_idx)
 losses = ['Florida State 1.04', 'Florida 1.04', 'Los Angeles Rams 1.03', 'Manchester City 1.05', 'Pittsburgh Steelers 1.05',
  'Milwaukee Bucks 1.06', 'Dayton 1.06', 'Dayton 1.08', 'Pittsburgh 4.25 vs Syracuse 1.09', 'Army (1.08)', 'Top Esports (1.03)',
- 'Reynor (1.09)', 'Colorado (1.07)', 'Team Gamerlegion (1.09)']
+ 'Reynor (1.09)', 'Colorado (1.07)', 'Team Gamerlegion (1.09)', 'Georgetown (7.28) v. Creighton (1.08)', 'Houston (1.07) v. East Carolina (7.98)']
 
 # load a sheet based on its name
 # sheet_name = "allgames"
@@ -100,7 +100,7 @@ for i in df:
                 spenttokens+=bets
 
 print()
-sbAfterDiscount = tokens*.90
+sbAfterDiscount = tokens*.95
 
 print()
 print('Since December 4th, 2020')
