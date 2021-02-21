@@ -102,7 +102,7 @@ for i in df:
 print()
 sbAfterDiscount = tokens*.95
 
-print()
+print('With 5% discount')
 print('Since December 4th, 2020')
 print('There are '+str(totalGames) +' total games listed as high risk with 1.0x multiplier')
 print('There are '+ str(highrisk)+ ' games listed as 1.01 & 1.02')
@@ -121,3 +121,4 @@ print()
 for i in range(len(highRiskGames)):
     success = round((highRiskGames[i]-highRiskLosses[i])/highRiskGames[i]*100,1)
     print('There are '+str(highRiskGames[i])+ " 1.0"+str(i+1) + ' and there are '+ str(highRiskLosses[i]) +' losses in this group, ' +"success rate: " + str(success)+"%")
+print('There are '+str(1)+ " 1.1"+str(i+1) + ' and there are '+ str(1) +' losses in this group, ' +"success rate: " + str(0)+"%")
